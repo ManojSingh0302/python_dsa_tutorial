@@ -1,4 +1,4 @@
-# Github_tutorial_ms
+# python data struture tutorial
  This is tutorial repository for understanding Github
 
 This tutorial will cover following git operations.
