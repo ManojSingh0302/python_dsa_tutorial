@@ -19,12 +19,20 @@ def reverse_string(input):
 
 
 def is_string_palindrome(input_string):
-    """checks if a string is palindrome"""
+    """solution 1: checks if a string is palindrome"""
     reversed_string = reverse_string(input_string)
     if input_string == reversed_string:
         return True
     else:
         return False
+
+
+def is_string_palindrome_using_slicing(input_string):
+    """solution 2: using slicing operations"""
+    is_palindrome = False
+    if input_string == input_string[::-1]:
+        is_palindrome = True
+    return is_palindrome
 
 
 if __name__ == "__main__":
@@ -54,5 +62,7 @@ if __name__ == "__main__":
         input_data = test["input"]
         if input_data not in [None, ""]:
             result = is_string_palindrome(input_data)
+            print(f" Input {input_data} output {result}")
+            result = is_string_palindrome_using_slicing(input_data)
             print(f" Input {input_data} output {result}")
 
