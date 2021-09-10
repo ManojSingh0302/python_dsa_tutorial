@@ -10,12 +10,12 @@ Our task is to design an optimal algorithm for checking whether a given string i
 """
 
 
-def reverse_string(input):
+def reverse_string(input_value):
     """find reverse of a string"""
-    value = ""
-    for i in range(len(input)-1, -1, -1):
-        value += input[i]
-    return value
+    output_value = ""
+    for index in range(len(input_value)-1, -1, -1):
+        output_value += input_value[index]
+    return output_value
 
 
 def is_string_palindrome(input_string):
@@ -47,11 +47,11 @@ if __name__ == "__main__":
         },
         {
             "input": "manoj",
-            "output": True
+            "output": False
         },
         {
-            "input": "aa",
-            "output": True
+            "input": "car",
+            "output": False
         },
         {
             "input": None,
@@ -60,9 +60,8 @@ if __name__ == "__main__":
     ]
     for test in test_cases:
         input_data = test["input"]
+        out_data = test["output"]
         if input_data not in [None, ""]:
-            result = is_string_palindrome(input_data)
-            print(f" Input {input_data} output {result}")
-            result = is_string_palindrome_using_slicing(input_data)
-            print(f" Input {input_data} output {result}")
+            assert is_string_palindrome(input_data) == out_data, f"Test case failed for input {input_data}"
+            assert is_string_palindrome_using_slicing(input_data) == out_data, f"Test case failed for input {input_data}"
 
