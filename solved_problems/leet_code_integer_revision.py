@@ -45,7 +45,7 @@ class Solution:
             start_index += 1
         x_in_str = is_negative + ''.join(x_in_list)
         x = int(x_in_str)
-        if -(2**31) < x < (2**31) -1:
+        if -(2 ** 31) <= x <= (2 ** 31) - 1:  # checking the range
             return x
         else:
             return 0
